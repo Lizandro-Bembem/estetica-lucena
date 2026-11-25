@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <!-- Bloqueia o zoom (pinça e toque duplo) no celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <title>Estética Lucena | Cílios, Sobrancelhas e Estética em Cajazeiras, Salvador</title>
+    <meta name="description" content="Estética Lucena — extensão de cílios, design e micropigmentação de sobrancelhas, limpeza de pele e remoção de acrocórdons em Cajazeiras, Salvador. Agende seu horário online.">
+    <meta name="theme-color" content="#12100E">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Compartilhamento (WhatsApp / Instagram / Facebook) -->
+    <meta property="og:title" content="Estética Lucena">
+    <meta property="og:description" content="Cílios, sobrancelhas e estética avançada em Cajazeiras, Salvador. Agende seu horário!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/compartilhar.jpg">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-loading">
+
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+        <div class="preloader__logo">
+            <svg class="preloader__mono" viewBox="0 0 120 120">
+                <circle class="preloader__ring" cx="60" cy="60" r="56"/>
+            </svg>
+            <span class="mark preloader__mark"></span>
+        </div>
+        <p class="preloader__name">Estética Lucena</p>
+    </div>
+</div>
+
+<!-- Cursor personalizado (apenas desktop) -->
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span></div>
+
+<!-- Barra de progresso de rolagem -->
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+    <div class="wrap header__inner">
+        <nav class="nav nav--left" aria-label="Menu principal">
+            <a href="#sobre" class="nav__link">Sobre</a>
+            <a href="#servicos" class="nav__link">Serviços</a>
+            <a href="#combos" class="nav__link">Combos</a>
+        </nav>
+
+        <a href="#inicio" class="logo" aria-label="Estética Lucena - início">
+            <span class="logo__mono"><span class="mark"></span></span>
+            <span class="logo__text">Lucena<small>Estética</small></span>
+        </a>
+
+        <div class="header__right">
+            <nav class="nav" aria-label="Menu secundário">
+                <a href="#galeria" class="nav__link">Galeria</a>
+                <a href="#contato" class="nav__link">Contato</a>
+            </nav>
+            <a href="#agendar" class="btn btn--gold btn--sm header__cta magnetic">Agendar</a>
+        </div>
+
+        <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">
+            <span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<!-- Menu mobile -->
+<div class="mmenu" id="mmenu" aria-hidden="true">
+    <nav class="mmenu__nav">
+        <a href="#inicio" class="mmenu__link"><span>01</span>Início</a>
+        <a href="#sobre" class="mmenu__link"><span>02</span>Sobre</a>
+        <a href="#servicos" class="mmenu__link"><span>03</span>Serviços</a>
+        <a href="#combos" class="mmenu__link"><span>04</span>Combos</a>
+        <a href="#galeria" class="mmenu__link"><span>05</span>Galeria</a>
+        <a href="#agendar" class="mmenu__link"><span>06</span>Agendar</a>
+    </nav>
+    <div class="mmenu__foot">
+        <a href="#" data-contato target="_blank" rel="noopener"><span data-contato-label="Direct">WhatsApp</span></a>
+        <a href="https://instagram.com/lucenaestetica" target="_blank" rel="noopener">Instagram</a>
+    </div>
+</div>
+
+<main>
+    <!-- ============ HERO (capa de revista) ============ -->
+    <section class="hero" id="inicio">
+        <div class="hero__bg" aria-hidden="true">
+            <span class="blob blob--1" data-parallax="0.15"></span>
+            <span class="blob blob--2" data-parallax="-0.1"></span>
+        </div>
+
+        <div class="wrap">
+            <div class="hero__top">
+                <p class="eyebrow hero__eyebrow"><span class="line"></span>Estética avançada · Cajazeiras, Salvador</p>
+                <p class="hero__live fade-up"><span class="dot"></span>Agenda aberta</p>
+            </div>
+
+            <div class="hero__stage">
+                <h1 class="hero__title">
+                    <span class="split hero__l1">Seu olhar</span>
+                    <span class="split hero__l2">merece</span>
+                    <span class="split hero__l3"><em>esse cuidado.</em></span>
+                </h1>
+
+                <div class="hero__oval reveal-img">
+                    <div class="ph ph--hero" data-img="img/hero.jpg" role="img" aria-label="Extensão de cílios feita na Estética Lucena"></div>
+                </div>
+
+                <div class="hero__badge" aria-hidden="true">
+                    <svg viewBox="0 0 200 200" class="hero__badge-text">
+                        <defs><path id="circlePath" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+                        <text><textPath href="#circlePath" textLength="488" lengthAdjust="spacing">AGENDE SEU HORÁRIO • ESTÉTICA LUCENA • </textPath></text>
+                    </svg>
+                    <span class="hero__badge-mono mark"></span>
+                </div>
+            </div>
+
+            <div class="hero__bottom">
+                <p class="hero__text fade-up">
+                    Extensão de cílios, sobrancelhas, micropigmentação e cuidados com a pele —
+                    feitos com técnica, formação e o carinho de quem ama realçar a beleza natural.
+                </p>
+                <div class="hero__actions fade-up">
+                    <a href="#agendar" class="btn btn--gold magnetic">
+                        Agendar horário
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                    <a href="#combos" class="btn btn--line magnetic">Ver combos</a>
+                </div>
+            </div>
+
+            <ol class="creds fade-up">
+                <li><span>01</span>Graduada em Estética Cosmética</li>
+                <li><span>02</span>Pós-graduada em Estética Avançada</li>
+                <li><span>03</span>Biomedicina</li>
+                <li><span>04</span>Micropigmentação</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- ============ FAIXA ============ -->
+    <div class="marquee-wrap" aria-hidden="true">
+        <div class="marquee marquee--back"><div class="marquee__track marquee__track--rev">
+            <span>Cílios</span><i>✦</i><span>Sobrancelhas</span><i>✦</i><span>Pele</span><i>✦</i><span>Micropigmentação</span><i>✦</i><span>Cílios</span><i>✦</i><span>Sobrancelhas</span><i>✦</i><span>Pele</span><i>✦</i><span>Micropigmentação</span><i>✦</i>
+            <span>Cílios</span><i>✦</i><span>Sobrancelhas</span><i>✦</i><span>Pele</span><i>✦</i><span>Micropigmentação</span><i>✦</i><span>Cílios</span><i>✦</i><span>Sobrancelhas</span><i>✦</i><span>Pele</span><i>✦</i><span>Micropigmentação</span><i>✦</i>
+        </div></div>
+        <div class="marquee"><div class="marquee__track">
+            <span>Extensão de cílios</span><i>✦</i><span>Design de sobrancelhas</span><i>✦</i><span>Micropigmentação</span><i>✦</i><span>Limpeza de pele</span><i>✦</i><span>Remoção de acrocórdons</span><i>✦</i><span>Combos</span><i>✦</i>
+            <span>Extensão de cílios</span><i>✦</i><span>Design de sobrancelhas</span><i>✦</i><span>Micropigmentação</span><i>✦</i><span>Limpeza de pele</span><i>✦</i><span>Remoção de acrocórdons</span><i>✦</i><span>Combos</span><i>✦</i>
+        </div></div>
+    </div>
+
+    <!-- ============ SOBRE (manifesto) ============ -->
+    <section class="section about" id="sobre">
+        <div class="wrap about__grid">
+            <div class="about__text">
+                <p class="eyebrow reveal"><span class="line"></span>Sobre o espaço</p>
+                <h2 class="manifesto reveal">
+                    A beleza que <em>já é sua</em>, só que em <em>evidência</em>.
+                </h2>
+                <p class="reveal">
+                    Na Estética Lucena, cada procedimento começa pela escuta: entender o seu rosto, a sua rotina e o
+                    resultado que você sonha. Depois, é técnica, formação e atenção a cada detalhe — do fio da
+                    sobrancelha ao último cílio.
+                </p>
+                <p class="reveal">
+                    Atendimento com hora marcada, em um espaço pensado para você se sentir cuidada do começo ao fim,
+                    aqui em Cajazeiras.
+                </p>
+                <a href="#agendar" class="link-arrow reveal">Quero ser atendida <span>→</span></a>
+            </div>
+
+            <div class="about__visual">
+                <div class="about__oval reveal-img">
+                    <div class="ph ph--about" data-img="img/lucena.jpg" role="img" aria-label="Profissional da Estética Lucena"></div>
+                </div>
+                <div class="about__circle reveal-img" data-parallax="-0.08">
+                    <div class="ph ph--about2" data-img="img/espaco.jpg" role="img" aria-label="Espaço Lucena"></div>
+                </div>
+                <p class="about__sign reveal" data-parallax="0.06">Lucena<small>Estética</small></p>
+            </div>
+        </div>
+
+        <div class="wrap">
+            <ul class="pillars">
+                <li class="reveal"><span class="pillars__n">I.</span><h3>Formação</h3><p>Estética Cosmética, Estética Avançada, Biomedicina e Micropigmentação.</p></li>
+                <li class="reveal"><span class="pillars__n">II.</span><h3>Biossegurança</h3><p>Materiais higienizados e procedimentos feitos com segurança.</p></li>
+                <li class="reveal"><span class="pillars__n">III.</span><h3>Exclusividade</h3><p>Hora marcada, sem pressa — o tempo é todo seu.</p></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============ SERVIÇOS (lista editorial) ============ -->
+    <section class="section services" id="servicos">
+        <div class="wrap">
+            <div class="head">
+                <p class="eyebrow reveal"><span class="line"></span>Serviços</p>
+                <h2 class="title reveal">O menu de <em>cuidados</em></h2>
+                <p class="head__sub reveal">Toque em “Agendar” e o serviço já vai selecionado para o agendamento.</p>
+            </div>
+
+            <!--
+              COMO EDITAR OS SERVIÇOS:
+              - Troque o texto de "service__price" pelo valor (ex.: R$ 120,00).
+              - O atributo data-service precisa ser igual ao nome usado no agendamento (script.js → CONFIG.servicos).
+            -->
+            <div class="services__list">
+                <article class="service reveal" data-service="Extensão de cílios">
+                    <span class="service__num">01</span>
+                    <h3>Extensão de <em>cílios</em></h3>
+                    <p>Cílios delicados, elegantes e feitos para o seu olhar — realce sem esforço no dia a dia.</p>
+                    <div class="service__foot"><span class="service__price">Consulte o valor</span><button class="service__btn" type="button">Agendar <span>↗</span></button></div>
+                </article>
+                <article class="service reveal" data-service="Design de sobrancelhas">
+                    <span class="service__num">02</span>
+                    <h3>Design de <em>sobrancelhas</em></h3>
+                    <p>Desenho pensado para o formato do seu rosto, valorizando a sua expressão natural.</p>
+                    <div class="service__foot"><span class="service__price">Consulte o valor</span><button class="service__btn" type="button">Agendar <span>↗</span></button></div>
+                </article>
+                <article class="service reveal" data-service="Micropigmentação de sobrancelhas">
+                    <span class="service__num">03</span>
+                    <h3><em>Micro</em>pigmentação</h3>
+                    <p>Sobrancelhas preenchidas e definidas por mais tempo, com acabamento natural.</p>
+                    <div class="service__foot"><span class="service__price">Consulte o valor</span><button class="service__btn" type="button">Agendar <span>↗</span></button></div>
+                </article>
+                <article class="service reveal" data-service="Limpeza de pele">
+                    <span class="service__num">04</span>
+                    <h3>Limpeza de <em>pele</em></h3>
+                    <p>Pele limpa, renovada e preparada — o primeiro passo para um rosto radiante.</p>
+                    <div class="service__foot"><span class="service__price">Consulte o valor</span><button class="service__btn" type="button">Agendar <span>↗</span></button></div>
+                </article>
+                <article class="service reveal" data-service="Remoção de acrocórdons">
+                    <span class="service__num">05</span>
+                    <h3>Remoção de <em>acrocórdons</em></h3>
+                    <p>Remoção das famosas “verruguinhas” do rosto e do pescoço, com segurança.</p>
+                    <div class="service__foot"><span class="service__price">Consulte o valor</span><button class="service__btn" type="button">Agendar <span>↗</span></button></div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ COMBOS (tickets) ============ -->
+    <section class="section combos" id="combos">
+        <div class="wrap combos__grid">
+            <div class="head combos__head">
+                <p class="eyebrow reveal"><span class="line"></span>Combos promocionais</p>
+                <h2 class="title reveal">Os melhores <em>combos</em> você encontra aqui.</h2>
+                <p class="head__sub reveal">Mais de um cuidado no mesmo pacote, com valor especial.</p>
+            </div>
+
+            <div class="tickets">
+                <article class="ticket tilt reveal">
+                    <div class="ticket__main">
+                        <span class="ticket__tag">Básico</span>
+                        <h3>Combo <em>Básico</em></h3>
+                        <ul>
+                            <li>Limpeza de pele</li>
+                            <li>Extensão de cílios</li>
+                        </ul>
+                    </div>
+                    <div class="ticket__stub">
+                        <p class="ticket__price"><small>por</small>R$ 250<sup>,00</sup></p>
+                        <button type="button" class="btn btn--dark btn--sm" data-agendar="Combo Básico">Quero esse</button>
+                    </div>
+                </article>
+
+                <article class="ticket ticket--premium tilt reveal">
+                    <div class="ticket__main">
+                        <span class="ticket__tag">Premium</span>
+                        <h3>Combo <em>Premium</em></h3>
+                        <ul>
+                            <li>Micropigmentação de sobrancelhas</li>
+                            <li>Extensão de cílios</li>
+                            <li>Limpeza de pele</li>
+                        </ul>
+                    </div>
+                    <div class="ticket__stub">
+                        <!-- Troque "Consulte" pelo preço do combo Premium (ex.: R$ 450<sup>,00</sup>) -->
+                        <p class="ticket__price ticket__price--ask"><small>valor</small>Consulte</p>
+                        <button type="button" class="btn btn--gold btn--sm" data-agendar="Combo Premium">Quero esse</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ GALERIA (mosaico) ============ -->
+    <section class="section gallery" id="galeria">
+        <div class="wrap">
+            <div class="head head--row">
+                <div>
+                    <p class="eyebrow reveal"><span class="line"></span>Galeria</p>
+                    <h2 class="title reveal">Resultados <em>reais</em></h2>
+                </div>
+                <div class="filters reveal" role="tablist" aria-label="Filtrar galeria">
+                    <button class="filter is-active" data-filter="todos" type="button">Todos</button>
+                    <button class="filter" data-filter="cilios" type="button">Cílios</button>
+                    <button class="filter" data-filter="sobrancelhas" type="button">Sobrancelhas</button>
+                    <button class="filter" data-filter="pele" type="button">Pele</button>
+                </div>
+            </div>
+
+            <!--
+              COMO TROCAR AS FOTOS DA GALERIA:
+              Coloque as fotos na pasta img/ com os nomes galeria-01.jpg, galeria-02.jpg ...
+              data-cat="cilios", "sobrancelhas" ou "pele" define o filtro.
+              Formatos: g-item--tall = vertical (3:4), g-item--wide = horizontal (3:2), os demais = quadrados (1:1).
+            -->
+            <div class="gallery__grid" id="galleryGrid">
+                <figure class="g-item g-item--tall reveal" data-cat="cilios"><div class="ph" data-img="img/galeria-01.jpg"></div><figcaption>Extensão de cílios</figcaption></figure>
+                <figure class="g-item reveal" data-cat="sobrancelhas"><div class="ph ph--b" data-img="img/galeria-02.jpg"></div><figcaption>Design de sobrancelhas</figcaption></figure>
+                <figure class="g-item g-item--wide reveal" data-cat="sobrancelhas"><div class="ph ph--c" data-img="img/galeria-03.jpg"></div><figcaption>Micropigmentação</figcaption></figure>
+                <figure class="g-item reveal" data-cat="cilios"><div class="ph ph--d" data-img="img/galeria-04.jpg"></div><figcaption>Volume delicado</figcaption></figure>
+                <figure class="g-item g-item--tall reveal" data-cat="pele"><div class="ph ph--e" data-img="img/galeria-05.jpg"></div><figcaption>Limpeza de pele</figcaption></figure>
+                <figure class="g-item reveal" data-cat="sobrancelhas"><div class="ph ph--f" data-img="img/galeria-06.jpg"></div><figcaption>Sobrancelhas definidas</figcaption></figure>
+                <figure class="g-item reveal" data-cat="cilios"><div class="ph ph--g" data-img="img/galeria-07.jpg"></div><figcaption>Olhar marcante</figcaption></figure>
+                <figure class="g-item g-item--wide reveal" data-cat="pele"><div class="ph ph--h" data-img="img/galeria-08.jpg"></div><figcaption>Remoção de acrocórdons</figcaption></figure>
+                <figure class="g-item reveal" data-cat="sobrancelhas"><div class="ph" data-img="img/galeria-09.jpg"></div><figcaption>Antes e depois</figcaption></figure>
+            </div>
+
+            <div class="gallery__cta reveal">
+                <a href="https://instagram.com/lucenaestetica" target="_blank" rel="noopener" class="btn btn--line magnetic">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="fill"/></svg>
+                    Ver mais no Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox da galeria -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox__close" id="lbClose" aria-label="Fechar">×</button>
+        <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Anterior">‹</button>
+        <div class="lightbox__stage"><div class="lightbox__img" id="lbImg"></div><p class="lightbox__cap" id="lbCap"></p></div>
+        <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Próxima">›</button>
+    </div>
+
+    <!-- ============ AGENDAMENTO ============ -->
+    <section class="section booking" id="agendar">
+        <div class="booking__bg" aria-hidden="true"><span class="blob blob--4"></span></div>
+        <div class="wrap booking__grid">
+            <div class="booking__intro">
+                <p class="eyebrow reveal"><span class="line"></span>Agendamento online</p>
+                <h2 class="title reveal">Reserve o seu <em>momento</em></h2>
+                <p class="reveal">Escolha o procedimento, o dia e o horário que preferir. Seu pedido chega direto para a Estética Lucena confirmar.</p>
+
+                <ol class="steps">
+                    <li class="reveal"><span>1</span><div><strong>Escolha o serviço</strong><small>Ou um dos combos</small></div></li>
+                    <li class="reveal"><span>2</span><div><strong>Dia e horário</strong><small>Do jeito que for melhor pra você</small></div></li>
+                    <li class="reveal"><span>3</span><div><strong>Envie o pedido</strong><small>A Estética Lucena confirma o seu horário</small></div></li>
+                </ol>
+            </div>
+
+            <form class="bform reveal" id="bookingForm" novalidate>
+                <div class="bform__progress"><span id="bformBar"></span></div>
+
+                <!-- Passo 1 -->
+                <fieldset class="bstep is-active" data-step="1">
+                    <legend>1. Qual serviço?</legend>
+                    <div class="chips" id="serviceChips"></div>
+                    <p class="bform__error" data-error="1">Escolha pelo menos um serviço.</p>
+                    <div class="bform__actions"><span></span><button type="button" class="btn btn--gold" data-next>Continuar</button></div>
+                </fieldset>
+
+                <!-- Passo 2 -->
+                <fieldset class="bstep" data-step="2">
+                    <legend>2. Qual dia?</legend>
+                    <div class="days" id="days"></div>
+                    <legend class="legend-sm">Qual horário?</legend>
+                    <div class="chips chips--time" id="timeChips"></div>
+                    <p class="bform__error" data-error="2">Escolha o dia e o horário.</p>
+                    <div class="bform__actions"><button type="button" class="btn btn--link" data-prev>Voltar</button><button type="button" class="btn btn--gold" data-next>Continuar</button></div>
+                </fieldset>
+
+                <!-- Passo 3 -->
+                <fieldset class="bstep" data-step="3">
+                    <legend>3. Seus dados</legend>
+                    <label class="field"><input type="text" id="bName" placeholder=" " autocomplete="name" required><span>Seu nome</span></label>
+                    <label class="field"><textarea id="bNote" placeholder=" " rows="3"></textarea><span>Observação (opcional)</span></label>
+                    <div class="summary" id="summary"></div>
+                    <p class="bform__error" data-error="3">Digite o seu nome.</p>
+                    <div class="bform__actions"><button type="button" class="btn btn--link" data-prev>Voltar</button>
+                        <button type="submit" class="btn btn--gold">Enviar pedido</button>
+                    </div>
+                </fieldset>
+
+                <!-- Sucesso -->
+                <div class="bdone" id="bdone">
+                    <div class="bdone__check"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-15"/></svg></div>
+                    <h3>Pedido pronto!</h3>
+                    <p>Finalize o envio da mensagem. A Estética Lucena vai confirmar o seu horário em breve. ✨</p>
+                    <button type="button" class="btn btn--link" id="bRestart">Fazer outro agendamento</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ============ CONTATO ============ -->
+    <section class="section contact" id="contato">
+        <div class="wrap contact__grid">
+            <div>
+                <p class="eyebrow reveal"><span class="line"></span>Onde estamos</p>
+                <h2 class="address reveal">Rua Vereador <em>Zezeu Ribeiro</em>, 16<small>1º andar · Cajazeiras · Salvador, BA</small></h2>
+
+                <div class="contact__list">
+                    <a href="#" data-contato target="_blank" rel="noopener" class="ccard reveal">
+                        <small data-contato-label="Mensagem">WhatsApp</small><strong data-wa-numero>Fale pelo Direct</strong><span class="ccard__arrow">↗</span>
+                    </a>
+                    <a href="https://instagram.com/lucenaestetica" target="_blank" rel="noopener" class="ccard reveal">
+                        <small>Instagram</small><strong>@lucenaestetica</strong><span class="ccard__arrow">↗</span>
+                    </a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Rua+Vereador+Zezeu+Ribeiro%2C+16%2C+Cajazeiras%2C+Salvador+-+BA" target="_blank" rel="noopener" class="ccard reveal">
+                        <small>Como chegar</small><strong>Abrir no Google Maps</strong><span class="ccard__arrow">↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="map reveal-img">
+                <iframe title="Localização da Estética Lucena"
+                        src="https://www.google.com/maps?q=Rua+Vereador+Zezeu+Ribeiro,+16,+Cajazeiras,+Salvador+-+BA&output=embed"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CTA FINAL ============ -->
+    <section class="final">
+        <div class="final__ghost" aria-hidden="true">Lucena</div>
+        <div class="wrap final__inner">
+            <h2 class="final__title reveal">Realce a sua beleza <em>sem esforço.</em></h2>
+            <a href="#agendar" class="btn btn--gold btn--lg magnetic reveal">Quero agendar</a>
+        </div>
+    </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+    <div class="wrap footer__inner">
+        <a href="#inicio" class="logo"><span class="logo__mono"><span class="mark"></span></span><span class="logo__text">Lucena<small>Estética</small></span></a>
+        <p>© <span id="year"></span> Estética Lucena · Cajazeiras, Salvador</p>
+        <div class="footer__social">
+            <a href="https://instagram.com/lucenaestetica" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+            <a href="#" data-contato target="_blank" rel="noopener" aria-label="Mensagem"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></a>
+        </div>
+    </div>
+</footer>
+
+<!-- Botão flutuante de contato (WhatsApp ou Direct) -->
+<a href="#" data-contato class="wa-float" target="_blank" rel="noopener" aria-label="Enviar mensagem">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.3c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg>
+</a>
+
+<!-- Voltar ao topo -->
+<button class="to-top" id="toTop" aria-label="Voltar ao topo">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
