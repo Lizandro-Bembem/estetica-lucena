@@ -234,16 +234,21 @@ if (finePointer && !reducedMotion) {
 
     window.addEventListener('mousemove', e => {
         mx = e.clientX; my = e.clientY;
-        dot.style.transform = `translate(${mx}px, ${my}px)`;
+        dot.style.transform = `translate3d(${mx}px, ${my}px, 0)`;
     });
     (function loop() {
         rx += (mx - rx) * 0.16;
         ry += (my - ry) * 0.16;
-        ring.style.transform = `translate(${rx}px, ${ry}px)`;
+        // posição arredondada em pixels inteiros evita borrar o que fica por baixo
+        ring.style.transform = `translate3d(${Math.round(rx)}px, ${Math.round(ry)}px, 0)`;
         requestAnimationFrame(loop);
     })();
+    // Inversão de cores só onde fica bonito; para incluir outro elemento, adicione data-cursor="invert" nele
+    const INVERT = '.btn, .logo, [data-cursor="invert"]';
     document.addEventListener('mouseover', e => {
-        cursor.classList.toggle('is-hover', !!e.target.closest('a, button, .g-item, .service, label'));
+        const invert = !!e.target.closest(INVERT);
+        cursor.classList.toggle('is-invert', invert);
+        cursor.classList.toggle('is-hover', !invert && !!e.target.closest('a, button, .g-item, .service, label'));
     });
 
     // Botões magnéticos
