@@ -1,0 +1,33 @@
+{
+    "id": "./",
+    "name": "Estética Lucena",
+    "short_name": "Lucena",
+    "description": "Cílios, sobrancelhas e estética avançada em Cajazeiras, Salvador. Agende seu horário.",
+    "lang": "pt-BR",
+    "dir": "ltr",
+    "start_url": "./",
+    "scope": "./",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#FFEDD7",
+    "theme_color": "#FFEDD7",
+    "categories": ["beauty", "lifestyle", "health"],
+    "icons": [
+        { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+        { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+        { "src": "icons/icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+        { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    ],
+    "screenshots": [
+        { "src": "icons/screenshot-mobile.jpg", "sizes": "1080x1920", "type": "image/jpeg", "form_factor": "narrow", "label": "Página inicial no celular" },
+        { "src": "icons/screenshot-desktop.jpg", "sizes": "1920x1080", "type": "image/jpeg", "form_factor": "wide", "label": "Página inicial no computador" }
+    ],
+    "shortcuts": [
+        {
+            "name": "Agendar horário",
+            "short_name": "Agendar",
+            "url": "./#agendar",
+            "icons": [{ "src": "icons/shortcut-agendar.png", "sizes": "96x96", "type": "image/png" }]
+        }
+    ]
+}

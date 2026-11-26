@@ -81,22 +81,14 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
    Bloqueio de zoom no celular (pinça e toque duplo)
    --------------------------------------------------------- */
 (function blockZoom() {
-    // iOS Safari ignora "user-scalable=no", então bloqueamos os gestos manualmente
+    // O toque duplo e a pinça já são bloqueados pelo CSS (touch-action: pan-x pan-y).
+    // Antes havia um bloqueio por JavaScript no "touchend" que cancelava toques rápidos
+    // seguidos (ex.: escolher um serviço e logo tocar em "Continuar") — foi removido.
+    // iOS Safari ignora "user-scalable=no", então bloqueamos o gesto de pinça dele:
     ['gesturestart', 'gesturechange', 'gestureend'].forEach(evt =>
         document.addEventListener(evt, e => e.preventDefault(), { passive: false })
     );
-    // Pinça com dois dedos
-    document.addEventListener('touchmove', e => {
-        if (e.touches.length > 1 || (e.scale && e.scale !== 1)) e.preventDefault();
-    }, { passive: false });
-    // Toque duplo rápido
-    let lastTouch = 0;
-    document.addEventListener('touchend', e => {
-        const now = Date.now();
-        if (now - lastTouch <= 300 && !e.target.closest('input, textarea, select')) e.preventDefault();
-        lastTouch = now;
-    }, { passive: false });
-    // Ctrl + roda do mouse / teclado (zoom do navegador em trackpads)
+    // Ctrl + roda do mouse (zoom em trackpads)
     document.addEventListener('wheel', e => { if (e.ctrlKey) e.preventDefault(); }, { passive: false });
 })();
 
@@ -527,3 +519,44 @@ $$('[data-agendar]').forEach(btn => btn.addEventListener('click', () => agendarS
 
 /* Ano no rodapé */
 $('#year').textContent = new Date().getFullYear();
+
+/* ---------------------------------------------------------
+   PWA: funciona offline e pode ser instalado como aplicativo
+   --------------------------------------------------------- */
+const seguro = location.protocol === 'https:' || ['localhost', '127.0.0.1'].includes(location.hostname);
+if ('serviceWorker' in navigator && seguro) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => { /* sem service worker o site funciona normalmente */ });
+    });
+}
+
+// Botão "Instalar app"
+const installBtns = $$('[data-install]');
+const instalado = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+const ehIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+let pedidoInstalacao = null;
+
+window.addEventListener('beforeinstallprompt', e => {
+    e.preventDefault(); // mostra o nosso botão em vez do aviso automático
+    pedidoInstalacao = e;
+    installBtns.forEach(b => { b.hidden = false; });
+});
+window.addEventListener('appinstalled', () => {
+    pedidoInstalacao = null;
+    installBtns.forEach(b => { b.hidden = true; });
+    mostrarAviso('App instalado! Procure por "Lucena" na tela inicial. ✨');
+});
+// No iPhone não existe o aviso automático: mostramos o passo a passo
+if (ehIOS && !instalado && seguro) installBtns.forEach(b => { b.hidden = false; });
+
+installBtns.forEach(b => b.addEventListener('click', async () => {
+    if (pedidoInstalacao) {
+        pedidoInstalacao.prompt();
+        try { await pedidoInstalacao.userChoice; } catch (e) { /* cancelado */ }
+        pedidoInstalacao = null;
+        installBtns.forEach(x => { x.hidden = true; });
+    } else if (ehIOS) {
+        toggleMenu(false);
+        mostrarAviso('No Safari, toque em Compartilhar (□↑) e depois em "Adicionar à Tela de Início".');
+    }
+}));
