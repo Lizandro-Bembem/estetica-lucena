@@ -235,12 +235,12 @@ if (finePointer && !reducedMotion) {
         ring.style.transform = `translate3d(${Math.round(rx)}px, ${Math.round(ry)}px, 0)`;
         requestAnimationFrame(loop);
     })();
-    // Inversão de cores só onde fica bonito; para incluir outro elemento, adicione data-cursor="invert" nele
-    const INVERT = '.btn, .logo, [data-cursor="invert"]';
+    // Sobre botões e logo a bolinha cresce mais; sobre links, cresce um pouco. Sempre marrom, sem inverter cores.
+    const GRANDE = '.btn, .logo, [data-cursor="grande"]';
     document.addEventListener('mouseover', e => {
-        const invert = !!e.target.closest(INVERT);
-        cursor.classList.toggle('is-invert', invert);
-        cursor.classList.toggle('is-hover', !invert && !!e.target.closest('a, button, .g-item, .service, label'));
+        const grande = !!e.target.closest(GRANDE);
+        cursor.classList.toggle('is-big', grande);
+        cursor.classList.toggle('is-hover', !grande && !!e.target.closest('a, button, .g-item, .service, label'));
     });
 
     // Botões magnéticos

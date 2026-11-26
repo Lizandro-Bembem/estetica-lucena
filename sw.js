@@ -5,7 +5,7 @@
    - Fotos, ícones e fontes: usa a cópia salva (rápido) e atualiza por trás.
    IMPORTANTE: ao mudar a lista ESSENCIAIS, aumente o número da VERSAO.
    ========================================================= */
-const VERSAO = 'lucena-v1';
+const VERSAO = 'lucena-v2';
 const CACHE_SITE = `${VERSAO}-site`;
 const CACHE_MIDIA = `${VERSAO}-midia`;
 
